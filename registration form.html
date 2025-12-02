@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIT Nagpur - Event Registration</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f8f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      border: 2px solid #000;
+      box-shadow: 0 0 15px red;
+      width: 320px;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      text-align: left;
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #confirmation {
+      margin-top: 15px;
+      color: green;          /* ✅ Green text */
+      font-weight: bold;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>SIT Nagpur - Event Registration</h2>
+    <form id="registrationForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="event">Select Event:</label>
+      <select id="event" name="event" required>
+        <option value="">--Choose an event--</option>
+        <option value="coding">Coding Competition</option>
+        <option value="robotics">Robotics</option>
+        <option value="quiz">Quiz</option>
+        <option value="sports">Sports</option>
+      </select>
+
+      <button type="submit">submit</button>
+    </form>
+
+    <p id="confirmation">✅ Registration Successful!</p>
+  </div>
+
+  <script>
+    document.getElementById("registrationForm").addEventListener("submit", function(event){
+      event.preventDefault(); // Prevents page reload
+      document.getElementById("confirmation").style.display = "block"; // Show message
+      this.reset(); // Clears form fields
+    });
+  </script>
+</body>
+</html>
